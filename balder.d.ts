@@ -1,6 +1,6 @@
 /**
 * BalderJS
-* version 12.0 (2025-08-    )
+* version 12.0 (2025-06-17)
 * Mattias Steinwall
 * Baldergymnasiet, Skellefteå, Sweden
 */
@@ -39,6 +39,8 @@ declare let ctx: CanvasRenderingContext2D;
  */
 declare const W: number;
 /**
+ * BalderJS
+ *
  * Returns the height, in pixels, of the canvas. See also `W`.
  * @example
  * Draw a circle in the middle of the canvas:
@@ -52,8 +54,15 @@ declare const W: number;
  * ```
 */
 declare const H: number;
+/**
+ * BalderJS
+ *
+ * Draws an ellipse on the canvas with center in (`x`, `y`).
+ */
 declare function ellipse(x: number, y: number, radiusX: number, radiusY: number, color?: string, lineWidth?: number): void;
 /**
+ * BalderJS
+ *
  * Draws a circle on the canvas with center in (`x`, `y`).
  * @example
  * Draw a filled circle with default color:
@@ -73,6 +82,8 @@ declare function ellipse(x: number, y: number, radiusX: number, radiusY: number,
  */
 declare function circle(x: number, y: number, radius: number, color?: string, lineWidth?: number): void;
 /**
+ * BalderJS
+ *
  * Clears the canvas.
  * @example
  * Clear the canvas:
@@ -87,6 +98,8 @@ declare function circle(x: number, y: number, radius: number, color?: string, li
  */
 declare function clear(x?: number, y?: number, width?: number, height?: number): void;
 /**
+ * BalderJS
+ *
  * Fills the canvas with given color.
  * @example
  * ```
@@ -95,6 +108,8 @@ declare function clear(x?: number, y?: number, width?: number, height?: number):
 */
 declare function fill(color?: string): void;
 /**
+ * BalderJS
+ *
  * Gets color information, as a 4-tuple, for a given pixel.
  * Values `r`(ed), `g`(reen), `b`(lue) and `a`(lpha) are all in the interval 0 to 255.
  * @example
@@ -104,10 +119,24 @@ declare function fill(color?: string): void;
  * ```
 */
 declare function getPixel(x: number, y: number): [r: number, g: number, b: number, a: number];
+/**
+ * BalderJS
+ *
+ */
 declare function fetchImages(...paths: string[]): Promise<HTMLImageElement[]>;
+/**
+ * BalderJS
+ *
+ */
 declare function fetchImage(path: string): Promise<HTMLImageElement>;
+/**
+ * BalderJS
+ *
+ */
 declare function imageFromDataURL(dataURL: string): HTMLImageElement;
 /**
+ * BalderJS
+ *
  * Draws a polygon on the canvas with edges in the `points`-array.
  * @example
  * Draw a red diamond shape:
@@ -117,6 +146,8 @@ declare function imageFromDataURL(dataURL: string): HTMLImageElement;
  */
 declare function polygon(points: [x: number, y: number][], color?: string, lineWidth?: number): void;
 /**
+ * BalderJS
+ *
  * Draws a line on the canvas between (`x1`, `y1`) and (`x2`, `y2`).
  * @example
  * Draw two thick blue lines across the canvas:
@@ -127,12 +158,25 @@ declare function polygon(points: [x: number, y: number][], color?: string, lineW
  */
 declare function line(x1: number, y1: number, x2: number, y2: number, color?: string, lineWidth?: number): void;
 /**
+ * BalderJS
+ *
  * Draws a rectangle on the canvas with upper left corner in (`x`, `y`).
  */
 declare function rectangle(x: number, y: number, width: number, height: number, color?: string, lineWidth?: number): void;
+/**
+ * BalderJS
+ *
+ * Draws a square on the canvas with upper left corner in (`x`, `y`).
+ */
 declare function square(x: number, y: number, side: number, color?: string, lineWidth?: number): void;
+/**
+ * BalderJS
+ *
+ */
 declare function str(value: unknown): string;
 /**
+ * BalderJS
+ *
  * Draws `value` as a string on the canvas. The baseline is set by `y`.
  * @example
  * Draw 'Hello world!' with the lower left corner in (`100`, `50`):
@@ -153,6 +197,8 @@ declare function str(value: unknown): string;
 declare function text(// 12.0
 value: unknown, x?: number | [number, "left" | "center" | "right"], y?: number | [number, "top" | "center" | "bottom"], fontSize?: number, color?: string): void;
 /**
+ * BalderJS
+ *
  * Draws a triangle on the canvas with corners in (`x1`, `y1`), (`x2`, `y2`) and (`x3`, `y3`).
  * @example
  * Draw a triangle with corners in (`100`, `50`), (`200`, `50`) and (`200`, `150`).
@@ -172,6 +218,8 @@ value: unknown, x?: number | [number, "left" | "center" | "right"], y?: number |
  */
 declare function triangle(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, color?: string, lineWidth?: number): void;
 /**
+ * BalderJS
+ *
  * An object for keyboard input.
  *
  * @example
@@ -235,16 +283,62 @@ declare const keyboard: {
     set down(value: false);
     get a(): boolean;
     set a(value: false);
+    get b(): boolean;
+    set b(value: false);
+    get c(): boolean;
+    set c(value: false);
     get d(): boolean;
     set d(value: false);
+    get e(): boolean;
+    set e(value: false);
+    get f(): boolean;
+    set f(value: false);
+    get g(): boolean;
+    set g(value: false);
+    get h(): boolean;
+    set h(value: false);
+    get i(): boolean;
+    set i(value: false);
+    get j(): boolean;
+    set j(value: false);
+    get k(): boolean;
+    set k(value: false);
+    get l(): boolean;
+    set l(value: false);
+    get m(): boolean;
+    set m(value: false);
+    get n(): boolean;
+    set n(value: false);
+    get o(): boolean;
+    set o(value: false);
+    get p(): boolean;
+    set p(value: false);
+    get q(): boolean;
+    set q(value: false);
+    get r(): boolean;
+    set r(value: false);
     get s(): boolean;
     set s(value: false);
+    get t(): boolean;
+    set t(value: false);
+    get u(): boolean;
+    set u(value: false);
+    get v(): boolean;
+    set v(value: false);
     get w(): boolean;
     set w(value: false);
+    get x(): boolean;
+    set x(value: false);
+    get y(): boolean;
+    set y(value: false);
+    get z(): boolean;
+    set z(value: false);
 };
 declare let _keyName: string;
 declare let _keys: Record<string, boolean | null>;
 /**
+ * BalderJS
+ *
  * An object for input from mouse or other pointing device.
  */
 declare const mouse: {
@@ -265,6 +359,8 @@ declare let _mouseY: number;
 declare let _mouseOver: boolean;
 declare let _buttons: (boolean | null)[];
 /**
+ * BalderJS
+ *
  * An object for input from touch screen.
  */
 declare const touchscreen: {
@@ -285,6 +381,10 @@ declare let _touches: {
 }[];
 declare let _touchable: boolean;
 declare function _touchHandler(event: TouchEvent): void;
+/**
+ * BalderJS
+ *
+ */
 declare class Cell {
     readonly row: number;
     readonly column: number;
@@ -314,6 +414,10 @@ declare class Cell {
     draw(): void;
     toString(): string;
 }
+/**
+ * BalderJS
+ *
+ */
 declare class Grid {
     readonly rows: number;
     readonly columns: number;
@@ -354,21 +458,10 @@ declare class Grid {
     draw(): void;
     toString(): string;
 }
-declare class Button {
-    readonly text: string;
-    private color;
-    private textColor;
-    private hb;
-    private activatable;
-    /**
-    * Additional info about this button.
-    */
-    tag: any;
-    constructor(text: string, x?: number | [number, "left" | "center" | "right"], y?: number | [number, "top" | "center" | "bottom"], width?: number, height?: number, color?: string, textColor?: string);
-    get activated(): boolean;
-    draw(): void;
-    toString(): string;
-}
+/**
+ * BalderJS
+ *
+ */
 declare class Hitbox {
     x: number;
     y: number;
@@ -387,6 +480,10 @@ declare class Hitbox {
     drawOutline(color?: string): void;
     toString(): string;
 }
+/**
+ * BalderJS
+ *
+ */
 declare class Sprite extends Hitbox {
     private spritesheet;
     private rows;
@@ -414,6 +511,10 @@ declare class Sprite extends Hitbox {
     draw(): void;
     getImages(): HTMLImageElement[];
 }
+/**
+ * BalderJS
+ *
+ */
 declare class Turtle {
     private x;
     private y;
@@ -487,8 +588,14 @@ declare class Turtle {
     endFill(): void;
     toString(): string;
 }
+/**
+ * BalderJS
+ *
+ */
 declare let deltaTime: number;
 /**
+ * BalderJS
+ *
  * Runs the `update`-function once for every screen update.
  * @example
  * Draw a circle at random postiton each update
@@ -524,6 +631,8 @@ declare let _timestamp0: number;
 declare function _updateHandler(timestamp: number): void;
 declare function stopUpdate(): void;
 /**
+ * BalderJS
+ *
  * Creates an array filled with `value`.
  * @example
  * Create the array `["-", "-", "-", "-", "-"]`:
@@ -533,6 +642,8 @@ declare function stopUpdate(): void;
  */
 declare function array<T>(length: number, value: Exclude<T, Function>): T[];
 /**
+ * BalderJS
+ *
  * Create an array filled with values returned by the `callback`-function.
  * @example
  * Create the array `[0, 2, 4, 6, 8, 10]`:
@@ -542,16 +653,22 @@ declare function array<T>(length: number, value: Exclude<T, Function>): T[];
  */
 declare function array<T>(length: number, callback: ((index: number) => T)): T[];
 /**
+ * BalderJS
+ *
  * Create a 2D-array filled with `value`.
  */
 declare function array2D<T>(rows: number, columns: number, value: Exclude<T, Function>): T[][];
 /**
+ * BalderJS
+ *
  * Create a 2D-array filled with values returned by the `callback`-function.
  */
 declare function array2D<T>(rows: number, columns: number, callback: ((rowIndex: number, columnIndex: number) => T)): T[][];
 declare let _audioContext: AudioContext;
 declare const _audioList: [OscillatorNode, GainNode][];
 /**
+ * BalderJS
+ *
  * Plays a beep. A user interaction is mandatory.
  * @example
  * Beeps for two seconds:
@@ -562,6 +679,8 @@ declare const _audioList: [OscillatorNode, GainNode][];
  */
 declare function beep(frequency?: number, msDuration?: number, volume?: number): Promise<void>;
 /**
+ * BalderJS
+ *
  * Returns the character corresponding to character code `charCode`.
  * @example
  * ```
@@ -570,6 +689,8 @@ declare function beep(frequency?: number, msDuration?: number, volume?: number):
  */
 declare function char(charCode: number): string;
 /**
+ * BalderJS
+ *
  * Returns the character code corresponding to character `char`.
  * @example
  * ```
@@ -578,6 +699,8 @@ declare function char(charCode: number): string;
 */
 declare function charCode(char: string): number | undefined;
 /**
+ * BalderJS
+ *
  * Returns `radAngle`, an angle in radians, to degrees.
  * @example
  * ```
@@ -586,14 +709,20 @@ declare function charCode(char: string): number | undefined;
  */
 declare function degrees(radAngle: number): number;
 /**
+ * BalderJS
+ *
  *  Returns the distance between (`x1`, `y1`) and (`x2`, `y2`).
  */
 declare function distance(x1: number, y1: number, x2: number, y2: number): number;
 /**
+ * BalderJS
+ *
  * Returns the point with polar coordinates (`radius`, `degAngle`).
  */
 declare function pointFromPolar(radius: number, degAngle: number, x0?: number, y0?: number): [x: number, y: number];
 /**
+ * BalderJS
+ *
  * Returns `degAngle`, an angle in degrees, to radians.
  * @example
  * ```
@@ -601,10 +730,15 @@ declare function pointFromPolar(radius: number, degAngle: number, x0?: number, y
  * ```
  */
 declare function radians(degAngle: number): number;
+/**
+ * BalderJS
+ *
+ */
 declare function rand(N: number): number;
 /**
- * Returns a random number between `min` and `max` (both included).
+ * BalderJS
  *
+ * Returns a random number between `min` and `max` (both included).
  * @example
  * Throw a die:
  * ```
@@ -613,6 +747,8 @@ declare function rand(N: number): number;
 */
 declare function random(min: number, max: number, step?: number): number;
 /**
+ * BalderJS
+ *
  * Returns a random item from `items`, the argument list.
  * @example
  * A random color:
@@ -622,17 +758,23 @@ declare function random(min: number, max: number, step?: number): number;
  */
 declare function randomItem<T>(...items: T[]): T;
 /**
+ * BalderJS
+ *
  * Returns a RGBA color.
  * Values `r`(ed), `g`(reen) and `b`(lue) are integers in the interval 0 to 255.
  * Value `a`(lpha) is between `0` and `1`.
  */
 declare function rgba(r: number, g: number, b: number, a?: number): string;
 /**
+ * BalderJS
+ *
  * Shuffles `array` in place.
  */
 declare function shuffle(array: unknown[]): void;
 /**
- * Pauses the execution för `msDuration` ms.
+ * BalderJS
+ *
+ * Pauses execution for `msDuration` ms.
  * @example
  * Show a green screen after 3 seconds:
  * ```
@@ -642,6 +784,10 @@ declare function shuffle(array: unknown[]): void;
  * ```
  */
 declare function sleep(msDuration: number): Promise<void>;
+/**
+ * BalderJS
+ *
+ */
 declare class Vector {
     x: number;
     y: number;
@@ -669,6 +815,10 @@ declare class Vector {
     dot(v: Vector): number;
     toString(): string;
 }
+/**
+ * BalderJS
+ *
+ */
 declare function setLayer(layer: number): void;
 declare const _io: HTMLDivElement;
 declare const _params: URLSearchParams;
@@ -677,7 +827,9 @@ declare let _inputLines: string[];
 declare let _inputLineIndex: number;
 declare let _outputElt: HTMLDivElement | null;
 /**
- * Writes the `prompt`, and waits for user input. Hides the canvas.
+ * BalderJS
+ *
+ * Writes `prompt`, and waits for user input. Hides the canvas.
  * @example
  * ```
  * let name = await read("Your name? ")
@@ -685,7 +837,9 @@ declare let _outputElt: HTMLDivElement | null;
  */
 declare function read(prompt?: string): Promise<string>;
 /**
- * Writes `value` to the screen. Hides the canvas.
+ * BalderJS
+ *
+ * Writes `value`. Hides the canvas.
  *
  * @example
  * ```
@@ -704,8 +858,10 @@ declare function read(prompt?: string): Promise<string>;
  */
 declare function write(value?: unknown, end?: "" | " " | "\t" | "\n"): void;
 /**
- * Clears the `io`-element (containing user input/output).
-*/
+ * BalderJS
+ *
+ * Clears the input/output-element.
+ */
 declare function clearIO(): void;
 declare let _repetition: number;
 declare let _repetitionElt: HTMLSpanElement;
@@ -713,4 +869,8 @@ declare let _lastValue: string[];
 declare const _console: HTMLDivElement;
 declare const _log: (...data: any[]) => void;
 declare function _writeConsole(...value: string[]): void;
+/**
+ * BalderJS
+ *
+ */
 declare function clearConsole(): void;

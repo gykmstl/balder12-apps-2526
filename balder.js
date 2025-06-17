@@ -162,9 +162,31 @@ const keyboard = {
     get right() { return !!_keys["ArrowRight"]; }, set right(value) { _keys["ArrowRight"] = value; },
     get down() { return !!_keys["ArrowDown"]; }, set down(value) { _keys["ArrowDown"] = value; },
     get a() { return !!_keys["KeyA"]; }, set a(value) { _keys["KeyA"] = value; },
+    get b() { return !!_keys["KeyB"]; }, set b(value) { _keys["KeyB"] = value; },
+    get c() { return !!_keys["KeyC"]; }, set c(value) { _keys["KeyC"] = value; },
     get d() { return !!_keys["KeyD"]; }, set d(value) { _keys["KeyD"] = value; },
+    get e() { return !!_keys["KeyE"]; }, set e(value) { _keys["KeyE"] = value; },
+    get f() { return !!_keys["KeyF"]; }, set f(value) { _keys["KeyF"] = value; },
+    get g() { return !!_keys["KeyG"]; }, set g(value) { _keys["KeyG"] = value; },
+    get h() { return !!_keys["KeyH"]; }, set h(value) { _keys["KeyH"] = value; },
+    get i() { return !!_keys["KeyI"]; }, set i(value) { _keys["KeyI"] = value; },
+    get j() { return !!_keys["KeyJ"]; }, set j(value) { _keys["KeyJ"] = value; },
+    get k() { return !!_keys["KeyK"]; }, set k(value) { _keys["KeyK"] = value; },
+    get l() { return !!_keys["KeyL"]; }, set l(value) { _keys["KeyL"] = value; },
+    get m() { return !!_keys["KeyM"]; }, set m(value) { _keys["KeyM"] = value; },
+    get n() { return !!_keys["KeyN"]; }, set n(value) { _keys["KeyN"] = value; },
+    get o() { return !!_keys["KeyO"]; }, set o(value) { _keys["KeyO"] = value; },
+    get p() { return !!_keys["KeyP"]; }, set p(value) { _keys["KeyP"] = value; },
+    get q() { return !!_keys["KeyQ"]; }, set q(value) { _keys["KeyQ"] = value; },
+    get r() { return !!_keys["KeyR"]; }, set r(value) { _keys["KeyR"] = value; },
     get s() { return !!_keys["KeyS"]; }, set s(value) { _keys["KeyS"] = value; },
+    get t() { return !!_keys["KeyT"]; }, set t(value) { _keys["KeyT"] = value; },
+    get u() { return !!_keys["KeyU"]; }, set u(value) { _keys["KeyU"] = value; },
+    get v() { return !!_keys["KeyV"]; }, set v(value) { _keys["KeyV"] = value; },
     get w() { return !!_keys["KeyW"]; }, set w(value) { _keys["KeyW"] = value; },
+    get x() { return !!_keys["KeyX"]; }, set x(value) { _keys["KeyX"] = value; },
+    get y() { return !!_keys["KeyY"]; }, set y(value) { _keys["KeyY"] = value; },
+    get z() { return !!_keys["KeyZ"]; }, set z(value) { _keys["KeyZ"] = value; },
 };
 let _keyName;
 let _keys = {};
@@ -419,69 +441,6 @@ class Grid {
                 this.cells[i][j].draw();
             }
         }
-    }
-    toString() {
-        return JSON.stringify(this);
-    }
-}
-class Button {
-    text;
-    color;
-    textColor;
-    hb;
-    activatable = true;
-    tag;
-    constructor(text, x = 0, y = 0, width, height, color = "lightgrey", textColor = "black") {
-        this.text = text;
-        this.color = color;
-        this.textColor = textColor;
-        const w = width ?? 75;
-        const h = height ?? 23;
-        if (typeof x != "number") {
-            switch (x[1]) {
-                case "left":
-                    x = x[0];
-                    break;
-                case "center":
-                    x = x[0] - w / 2;
-                    break;
-                case "right":
-                    x = x[0] - w;
-                    break;
-            }
-        }
-        if (typeof y != "number") {
-            switch (y[1]) {
-                case "top":
-                    y = y[0];
-                    break;
-                case "center":
-                    y = y[0] - h / 2;
-                    break;
-                case "bottom":
-                    y = y[0] - h;
-                    break;
-            }
-        }
-        this.hb = new Hitbox(x, y, w, h);
-        this.draw();
-    }
-    get activated() {
-        if (touchscreen.touched || mouse.buttons.some(value => value)) {
-            if (this.activatable) {
-                this.activatable = false;
-                const x = touchscreen.touched ? touchscreen.x : mouse.x;
-                const y = touchscreen.touched ? touchscreen.y : mouse.y;
-                return this.hb.contains(x, y);
-            }
-            return false;
-        }
-        this.activatable = true;
-        return false;
-    }
-    draw() {
-        rectangle(this.hb.x, this.hb.y, this.hb.width, this.hb.height, this.color);
-        text(this.text, [this.hb.x + this.hb.width / 2, "center"], [this.hb.y + this.hb.height / 2, "center"], this.hb.height / 2, this.textColor);
     }
     toString() {
         return JSON.stringify(this);
@@ -893,6 +852,7 @@ function setLayer(layer) {
     ctx = _ctxs[_layer];
 }
 setLayer(0);
+_canvas.focus();
 const _io = document.getElementById("_io");
 const _params = new URL(location.href).searchParams;
 const _iParam = _params.get("i");
@@ -1018,5 +978,3 @@ _console.onclick = () => {
 window.addEventListener("unhandledrejection", event => {
     throw event.reason;
 });
-_canvas.focus();
-//# sourceMappingURL=balder.js.map
